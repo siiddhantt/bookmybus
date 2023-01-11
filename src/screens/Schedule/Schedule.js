@@ -5,13 +5,13 @@ import styles from './styles';
 
 import NavBar from '../../components/NavBar';
 
-export default function HomePage() {
+export default function Schedule() {
     const navigation = useNavigation();
     return (
         <View style={styles.scrollView}>
             <ScrollView>
             </ScrollView>
-            <NavBar currentScreen={'HomePage'} />
+            <NavBar currentScreen={'Schedule'} />
         </View>
     );
 };
