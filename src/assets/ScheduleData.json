@@ -1,0 +1,212 @@
+{
+    "mon_fri": {
+        "bus1": {
+            "tableHead": [
+                "From",
+                "To",
+                "Out Time",
+                "Purpose"
+            ],
+            "tableData": [
+                [
+                    "Institute",
+                    "Sadar",
+                    "03:30PM",
+                    "-"
+                ],
+                [
+                    "Sadar",
+                    "Institute",
+                    "04:30PM",
+                    "-"
+                ],
+                [
+                    "Institute",
+                    "Ghadheri",
+                    "05:30PM",
+                    "Jagriti"
+                ],
+                [
+                    "Ghadheri",
+                    "Institute",
+                    "05:45PM",
+                    "Jagriti"
+                ],
+                [
+                    "Institute",
+                    "Sadar",
+                    "06:30PM",
+                    "-"
+                ],
+                [
+                    "Sadar",
+                    "Institute",
+                    "08:00PM",
+                    "-"
+                ],
+                [
+                    "Institute",
+                    "Sadar",
+                    "06:45PM",
+                    "-"
+                ],
+                [
+                    "Sadar",
+                    "Institute",
+                    "09:30PM",
+                    "-"
+                ],
+                [
+                    "Main Gate",
+                    "-",
+                    "10:00PM\n(Last Bus)",
+                    "-"
+                ]
+            ]
+        },
+        "bus2": {
+            "tableHead": [
+                "From",
+                "To",
+                "Out Time",
+                "Purpose"
+            ],
+            "tableData": [
+                [
+                    "Sadar",
+                    "Institute",
+                    "04:55PM",
+                    "Jagriti"
+                ],
+                [
+                    "Institute",
+                    "Sadar",
+                    "05:50",
+                    "-"
+                ],
+                [
+                    "Sadar",
+                    "Institute",
+                    "06:30PM",
+                    "-"
+                ],
+                [
+                    "Institute",
+                    "Gadheri",
+                    "07:30PM",
+                    "Jagriti"
+                ],
+                [
+                    "Gadheri",
+                    "Institute",
+                    "07:45PM",
+                    "Jagriti"
+                ],
+                [
+                    "Institute",
+                    "Meghwan",
+                    "08:00PM",
+                    "Jagriti"
+                ],
+                [
+                    "Meghwan",
+                    "Sadar",
+                    "08:10PM",
+                    "Jagriti"
+                ],
+                [
+                    "Sadar",
+                    "Institute",
+                    "09:00PM",
+                    "-"
+                ],
+                [
+                    "Institute",
+                    "Sadar",
+                    "10:00PM\n(Last Bus)",
+                    "-"
+                ]
+            ]
+        }
+    },
+    "sat_sun": {
+        "bus1": {
+            "tableHead": [
+                "From",
+                "To",
+                "Out Time"
+            ],
+            "tableData": [
+                [
+                    "Rewa Residence",
+                    "Sadar",
+                    "03:30PM"
+                ],
+                [
+                    "Sadar",
+                    "Rewa Residence",
+                    "04:45PM"
+                ],
+                [
+                    "Rewa Residence",
+                    "Sadar",
+                    "06:00PM"
+                ],
+                [
+                    "Sadar",
+                    "Rewa Residence",
+                    "08:00PM"
+                ],
+                [
+                    "Rewa Residence",
+                    "Russal Chowk",
+                    "08:45PM"
+                ],
+                [
+                    "Russal Chowk",
+                    "Rewa Residence",
+                    "09:30PM\n(Last Bus)"
+                ]
+            ]
+        },
+        "bus2": {
+            "tableHead": [
+                "From",
+                "To",
+                "Out Time"
+            ],
+            "tableData": [
+                [
+                    "Sadar",
+                    "Rewa Residence",
+                    "03:30PM"
+                ],
+                [
+                    "Rewa Residence",
+                    "Sadar",
+                    "04:30PM"
+                ],
+                [
+                    "Sadar",
+                    "Rewa Residence",
+                    "06:15PM"
+                ],
+                [
+                    "Rewa Residence",
+                    "Sadar",
+                    "07:00PM"
+                ],
+                [
+                    "Sadar Via Russal Chowk",
+                    "Rewa Residence",
+                    "09:00PM"
+                ],
+                [
+                    "Rewa Residence",
+                    "Sadar",
+                    "10:00PM\n(Last Bus)"
+                ]
+            ]
+        }
+    }
+}

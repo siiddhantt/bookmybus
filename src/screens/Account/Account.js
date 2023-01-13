@@ -1,12 +1,10 @@
 import React, { useState, useEffect } from 'react';
 import { View, ScrollView } from 'react-native';
-import { useNavigation } from '@react-navigation/native';
 import styles from './styles';
 
 import NavBar from '../../components/NavBar';
 
 export default function Account() {
-    const navigation = useNavigation();
     return (
         <View style={styles.scrollView}>
             <ScrollView>
