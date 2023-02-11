@@ -1,0 +1,47 @@
+{
+  "project_info": {
+    "project_number": "89516330676",
+    "project_id": "bookmybus-01",
+    "storage_bucket": "bookmybus-01.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:89516330676:android:a44a70c3fa270a789291e1",
+        "android_client_info": {
+          "package_name": "com.bookmybus"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "89516330676-hbvihsd3e9n6b9cclr96651ut3dc3rjl.apps.googleusercontent.com",
+          "client_type": 1,
+          "android_info": {
+            "package_name": "com.bookmybus",
+            "certificate_hash": "5e8f16062ea3cd2c4a0d547876baa6f38cabf625"
+          }
+        },
+        {
+          "client_id": "89516330676-eiomtdgslkrahr0hvssaseea4hobrpkt.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyB4yeadn8cFhSRBH91pTd5Y4XcYHaipTmg"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": [
+            {
+              "client_id": "89516330676-eiomtdgslkrahr0hvssaseea4hobrpkt.apps.googleusercontent.com",
+              "client_type": 3
+            }
+          ]
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}

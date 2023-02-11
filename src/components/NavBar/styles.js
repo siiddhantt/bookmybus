@@ -11,7 +11,8 @@ const styles = StyleSheet.create({
         flexDirection: "row",
         position: 'absolute',
         bottom: 0,
-        paddingHorizontal: 15
+        paddingHorizontal: 15,
+        elevation: 10
     },
     navItem: {
         padding: 4,

@@ -6,16 +6,19 @@ const styles = StyleSheet.create({
         width: "100%",
         paddingBottom: 65
     },
+    segmentView: {
+        paddingHorizontal: 16
+    },
     segment: {
         marginVertical: 5,
-        backgroundColor: "#C2E7FF",
+        backgroundColor: "rgba(0, 0, 0, 0.1)",
         borderRadius: 10
     },
     ACTIVE: {
         color: 'rgb(255, 255, 255)'
     },
     INACTIVE: {
-        color: 'rgba(0, 0, 0, 0.5)'
+        color: 'rgba(0, 0, 0, 0.7)'
     },
     heading: {
         marginTop: 10,

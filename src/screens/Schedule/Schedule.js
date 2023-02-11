@@ -22,13 +22,15 @@ export default function Schedule() {
     return (
         <View style={styles.scrollView}>
             <ScrollView>
-                <SegmentedControl
-                    style={styles.segment}
-                    onChange={(index) => setActiveIndex(index)}
-                    segments={segments}
-                    selectedIndex={activeIndex}
-                    tintColor={"#1A73E8"}
-                />
+                <View style={styles.segmentView}>
+                    <SegmentedControl
+                        style={styles.segment}
+                        onChange={(index) => setActiveIndex(index)}
+                        segments={segments}
+                        selectedIndex={activeIndex}
+                        tintColor={"#000000"}
+                    />
+                </View>
                 {activeIndex === 0 ?
                     <><Text style={styles.heading}>Bus - 1 (MP20PA7297)</Text>
                         <ScheduleTable tableHead={ScheduleData.mon_fri.bus1.tableHead} tableData={ScheduleData.mon_fri.bus1.tableData} />
