@@ -2,7 +2,7 @@
 
 <p align="center"><img src="https://socialify.git.ci/siiddhantt/bookmybus/image?font=Source%20Code%20Pro&amp;language=1&amp;name=1&amp;owner=1&amp;pattern=Charlie%20Brown&amp;stargazers=1&amp;theme=Auto" alt="project-image"></p>
 
-<p id="description">This project showcases a comprehensive Android app developed using React Native and Node.js aimed at simplifying institute bus ticket booking and enhancing related services. With real-time updates seamless payment processing and improved user engagement BookMyBus revolutionizes the way users interact with their institute's transportation system.</p>
+<p id="description">This project showcases a comprehensive Android app developed using React Native and Node.js aimed at simplifying institute bus ticket booking and enhancing related services. With real-time updates, seamless payment processing and improved user engagement BookMyBus revolutionizes the way users interact with their institute's transportation system.</p>
 
 <h2>Project Screenshots:</h2>
 
