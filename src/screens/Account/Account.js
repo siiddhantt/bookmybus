@@ -3,19 +3,22 @@ import {
   View,
   ScrollView,
   Text,
-  Pressable,
+  TouchableOpacity,
   ToastAndroid,
   Image,
   TextInput,
 } from 'react-native';
 import auth from '@react-native-firebase/auth';
 import {GoogleSignin} from '@react-native-google-signin/google-signin';
-import Icon from 'react-native-vector-icons/Ionicons';
 import {useNavigation} from '@react-navigation/native';
 import styles from './styles';
 
 import NavBar from '../../components/NavBar';
 import Alert from '../../components/Alert';
+
+import Help from './../../svgComponents/Help';
+import LogOut from './../../svgComponents/LogOut';
+import Ticket from './../../svgComponents/Ticket';
 
 async function onLogout() {
   await GoogleSignin.signOut();
@@ -23,15 +26,20 @@ async function onLogout() {
   return ToastAndroid.show('Logged out', ToastAndroid.SHORT);
 }
 
-const Option = ({onPress, text, icon}) => {
+const Option = ({text, description, icon, optionBg, onPress}) => {
   return (
-    <View style={styles.optionView}>
-      <Pressable style={styles.optionContainer} onPress={onPress}>
-        <Icon name={icon} color="#303b4a" size={26} />
-        <Text style={styles.option}>{text}</Text>
-        <Icon name="chevron-forward-outline" color="#212121" size={27} />
-      </Pressable>
-    </View>
+    <TouchableOpacity
+      style={[styles.optionView, {backgroundColor: optionBg}]}
+      activeOpacity={0.6}
+      onPress={onPress}>
+      <View style={styles.optionContainer}>
+        <View style={styles.optionIconContainer}>{icon}</View>
+        <View style={styles.optionTextContainer}>
+          <Text style={styles.option}>{text}</Text>
+          <Text style={styles.description}>{description}</Text>
+        </View>
+      </View>
+    </TouchableOpacity>
   );
 };
 
@@ -39,8 +47,6 @@ export default function Account() {
   const navigation = useNavigation();
   const [currentUser, setCurrentUser] = useState({});
   const [deleteModal, setDeleteModal] = useState(false);
-  const [monetizationModal, setMonetizationModal] = useState(false);
-  const [infoModal, setInfoModal] = useState(false);
   const [infoAlert, setInfoAlert] = useState(false);
 
   useEffect(() => {
@@ -58,15 +64,23 @@ export default function Account() {
         style={styles.container}
         contentContainerStyle={styles.contentContainer}>
         <View style={styles.profileContainer}>
-          <Image source={{uri: currentUser.photo}} style={styles.avtar} />
+          <Image
+            source={{
+              uri: currentUser.photo
+                ? currentUser.photo
+                : 'https://ui-avatars.com/api/?name=a&format=png',
+            }}
+            style={styles.avtar}
+          />
           <Text style={styles.userName}>{currentUser.name}</Text>
           <Text style={styles.userMail}>{currentUser.email}</Text>
         </View>
         <Text style={styles.heading}>App</Text>
         <View style={styles.modeContainer}>
           <Option
-            text="My Tickets"
-            icon="download-outline"
+            text="Tickets"
+            description="View all your past bookings"
+            icon={<Ticket />}
             onPress={() => {
               navigation.navigate('Tickets');
             }}
@@ -75,13 +89,15 @@ export default function Account() {
         <Text style={styles.heading}>General</Text>
         <View style={styles.modeContainer}>
           <Option
-            text="Help & Support"
-            icon="close-circle-outline"
-            onPress={() => props.navigation.navigate('BlockedList')}
+            text="Help"
+            description="Get help from us or report an issue"
+            icon={<Help />}
+            onPress={() => console.log(currentUser.photo)}
           />
           <Option
-            text="Log Out"
-            icon="trash-outline"
+            text="Log out"
+            description="Log out from this device"
+            icon={<LogOut />}
             onPress={() => setDeleteModal(true)}
           />
         </View>
@@ -89,7 +105,7 @@ export default function Account() {
         <Alert
           isVisible={deleteModal}
           dismiss={() => setDeleteModal(false)}
-          title="Log Out"
+          title="Log out"
           message="Are you sure you want to log out from this account"
           buttons={[
             {onPress: () => onLogout(), title: 'Yes'},

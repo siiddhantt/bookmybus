@@ -19,7 +19,7 @@ export default function Login(props) {
                             <Text style={styles.bodyTxt}>Welcome to BookMyBus!</Text>
                         </View>
                         <View style={styles.txtView}>
-                            <Text style={styles.detailTxt}>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna.
+                            <Text style={styles.detailTxt}>Your hassle-free ride begins here. Welcome to the college bus ticketing app!
                             </Text>
                         </View>
                     </View>

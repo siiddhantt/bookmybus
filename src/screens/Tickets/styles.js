@@ -13,7 +13,6 @@ const styles = StyleSheet.create({
     shadowRadius: 5,
     shadowOffset: {width: 1, height: 5},
     borderWidth: 0.5,
-    borderColor: 'rgba(255, 255, 255, 0.25)',
   },
   smallText: {
     color: '#FFFFFF',

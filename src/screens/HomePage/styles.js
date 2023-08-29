@@ -35,14 +35,16 @@ const styles = StyleSheet.create({
   btnStyle: {
     marginTop: 50,
     marginHorizontal: 28,
-    marginBottom: 80,
+    marginBottom: 100,
     backgroundColor: '#6C61AF',
-    padding: 15,
+    padding: 22,
     borderRadius: 5,
   },
   btnTxt: {
+    position: 'absolute',
+    marginVertical: 12,
     color: '#FFFFFF',
-    textAlign: 'center',
+    alignSelf: 'center',
   },
 });
 

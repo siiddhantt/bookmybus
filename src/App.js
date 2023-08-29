@@ -7,12 +7,14 @@ import {
 } from '@react-navigation/stack';
 import auth from '@react-native-firebase/auth';
 import {GoogleSignin} from '@react-native-google-signin/google-signin';
+import API_Service from './api/service';
 
 import Login from './screens/Login';
 import HomePage from './screens/HomePage';
 import Schedule from './screens/Schedule';
 import Account from './screens/Account';
 import Tickets from './screens/Tickets';
+import Slots from './screens/Slots';
 
 export default function App() {
   const [authenticated, setAuthenticated] = useState(false);
@@ -27,7 +29,19 @@ export default function App() {
       const {idToken, user} = await GoogleSignin.signIn();
       if (user.email.indexOf('@iiitdmj.ac.in') > -1) {
         const googleCredential = auth.GoogleAuthProvider.credential(idToken);
-        return auth().signInWithCredential(googleCredential);
+        const userCredential = await auth().signInWithCredential(
+          googleCredential,
+        );
+        try {
+          await API_Service.addNewUser({
+            user_id: userCredential.user.uid,
+            name: userCredential.user.displayName,
+            email: userCredential.user.email,
+          });
+        } catch (err) {
+          console.error('Error posting data:', err);
+        }
+        return userCredential;
       } else {
         await GoogleSignin.signOut();
         return ToastAndroid.show(
@@ -56,6 +70,7 @@ export default function App() {
           <Stack.Screen name="Schedule" component={Schedule} />
           <Stack.Screen name="Account" component={Account} />
           <Stack.Screen name="Tickets" component={Tickets} />
+          <Stack.Screen name="Slots" component={Slots} />
         </Stack.Navigator>
       </NavigationContainer>
     );

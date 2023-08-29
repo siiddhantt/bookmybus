@@ -1,5 +1,5 @@
 import React, {useState} from 'react';
-import {View, ScrollView, Text} from 'react-native';
+import {View, ScrollView, Text, LogBox} from 'react-native';
 import {SegmentedControl} from 'segmented-control-rn';
 import styles from './styles';
 import ScheduleData from '../../assets/ScheduleData.json';
@@ -8,6 +8,7 @@ import NavBar from '../../components/NavBar';
 import ScheduleTable from '../../components/ScheduleTable';
 
 export default function Schedule() {
+  LogBox.ignoreAllLogs();
   const segments = [
     {
       active: <Text style={styles.ACTIVE}>Mon-Fri</Text>,

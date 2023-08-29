@@ -1,0 +1,5 @@
+{
+  "Institute": ["Russal Chowk", "Sadar"],
+  "Russal Chowk": ["Institute"],
+  "Sadar": ["Institute"]
+}

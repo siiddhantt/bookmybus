@@ -1,20 +1,28 @@
 import React, {useState, useEffect} from 'react';
 import {View, Pressable, FlatList, Image, Text} from 'react-native';
-import axios from 'axios';
+import auth from '@react-native-firebase/auth';
+import API_Service from '../../api/service';
 import styles from './styles';
 
+import Ticket from '../../components/Ticket';
+
 export default function Tickets() {
+  const [modal, setDeleteModal] = useState(false);
   const [ticketData, setTicketData] = useState([]);
+  const [date, setDate] = useState(0);
   const postData = async () => {
     try {
-      const response = await axios.post('http://16.171.1.255/auth/bookings', {
-        user: 'CnS81KgmcwZDlVyenKRbWTgm1cq1',
+      const response = await API_Service.getUserBookings({
+        user_id: auth().currentUser.uid,
       });
       if (response.data.success) setTicketData(response.data.bookings);
-      console.log('API response:', response.data);
     } catch (error) {
       console.error('Error posting data:', error);
     }
+  };
+  const onPress = data => {
+    setDate(data.slot);
+    setDeleteModal(true);
   };
   useEffect(() => {
     postData();
@@ -31,7 +39,7 @@ export default function Tickets() {
             keyExtractor={(object, index) => index}
             renderItem={({item}) => {
               const date = new Date(parseInt(item.slot));
-              const dateString = date.toString();
+              const dateString = date.toLocaleString();
               return (
                 <Pressable
                   title=""
@@ -39,7 +47,9 @@ export default function Tickets() {
                     styles.buttonMyPurchase,
                     {height: 100, marginTop: 10, padding: 10},
                   ]}
-                  onPress={() => console.log(dateString)}>
+                  onPress={() => {
+                    onPress(item);
+                  }}>
                   <View
                     style={{
                       flex: 1,
@@ -122,7 +132,7 @@ export default function Tickets() {
                         </Text>
                         <Text
                           style={[styles.standardText, {fontWeight: 'bold'}]}>
-                          $100
+                          ₹{item.price}
                         </Text>
                       </View>
                     </View>
@@ -156,9 +166,16 @@ export default function Tickets() {
                   </View>
                 </Pressable>
               );
-            }}
-          />
+            }}></FlatList>
         </View>
+        <Ticket
+          _id={auth().currentUser.email}
+          slot={date}
+          isVisible={modal}
+          dismiss={() => setDeleteModal(false)}
+          title="Ticket"
+          message="Show this QR to the bus conductor"
+        />
       </View>
     </View>
   );
